@@ -1,6 +1,7 @@
 # coding: utf-8
-# 
+
 import os
+import sys
 import logging
 from random import uniform
 from time import sleep
@@ -25,63 +26,70 @@ startPos = [1600, 970]
 continuePos = [960, 540]
 
 def work(times):
-	logging.debug('第1次刷副本...')
-	logging.debug('点击闯关按钮...')
+	# logging.debug('第1次刷副本...')
+	logging.debug('-' * 20 + 'ROUND 1 START' + '-' * 20)
+	logging.debug('#1' + ':闯关')
 	tap_screen(startPos)
-	sleep(15)
+	sleep(25)
 
-	logging.debug('点击跳过按钮...')
+	logging.debug('#1' + ':跳过')
 	tap_screen(skipPos)
 	sleep(2)
 
-	logging.debug('点击自动按钮...')
-	tap_screen(autoPos)
-	sleep(65)
+	# logging.debug('点击自动按钮...')
+	# tap_screen(autoPos)
+	sleep(75)
 
-	logging.debug('点击跳过按钮...')
+	logging.debug('#1' + ':跳过')
 	tap_screen(skipPos)
 	sleep(10)
 
-	logging.debug('点击跳过按钮...')
+	logging.debug('#1' + ':跳过')
 	tap_screen(skipPos)
 	sleep(7)
 
-	logging.debug('点击任意处继续...')
+	logging.debug('#1' + ':任意处继续')
 	tap_screen(continuePos)
 	sleep(5)
 
+	logging.debug('-' * 20 + 'ROUND 1 END' + '-' * 20)
+
 	for i in xrange(1, times):
-		logging.debug('第{}次刷副本...'.format(i+1))
-		logging.debug('点击再次挑战按钮...')
+		# logging.debug('第{}次刷副本...'.format(i+1))
+
+		logging.debug(str(i + 1) + ':再次挑战')
 		tap_screen(againPos)
-		sleep(3)
+		sleep(8)
 
-		logging.debug('点击闯关按钮...')
+		logging.debug('-' * 20 + 'ROUND ' + str(i + 1) + ' START' + '-' * 20)
+
+		logging.debug('#' + str(i + 1) + ':闯关')
 		tap_screen(startPos)
-		sleep(15)
+		sleep(25)
 
-		logging.debug('点击跳过按钮...')
+		logging.debug('#' + str(i + 1) + ':跳过')
 		tap_screen(skipPos)
 		sleep(2)
 
-		logging.debug('点击自动按钮...')
-		tap_screen(autoPos)
-		sleep(65)
+		# logging.debug('点击自动按钮...')
+		# tap_screen(autoPos)
+		sleep(75)
 
-		logging.debug('点击跳过按钮...')
+		logging.debug('#' + str(i + 1) + ':跳过')
 		tap_screen(skipPos)
 		sleep(10)
 
-		logging.debug('点击跳过按钮...')
+		logging.debug('#' + str(i + 1) + ':跳过')
 		tap_screen(skipPos)
+		sleep(7)
+
+		logging.debug('#' + str(i + 1) + ':任意处继续')
+		tap_screen(continuePos)
 		sleep(5)
 
-		logging.debug('点击任意处继续...')
-		tap_screen(continuePos)
-		sleep(3)
-
+		logging.debug('-' * 20 + 'ROUND ' + str(i + 1) + ' END' + '-' * 20)
 
 if __name__ == '__main__':
-	work(20)
-	
+	# 
+	work(30)
 		
